@@ -2,6 +2,8 @@
     font-family: 'Google Sans', sans-serif;
 }
 
-.zoom {
-    zoom: 0.8;
+@media (max-width: 768px) {
+    .zoom {
+        zoom: 0.6;
+    }
 }
