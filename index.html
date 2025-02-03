@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINIFY & UNMINFY FILE</title>
+    <link rel="icon" type="image/png" href="public/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/style.css">
+</head>
+
+<body class="bg-base-300 h-screen flex justify-center items-center">
+    <div class="zoom px-12">
+        <div role="tablist" class="tabs tabs-bordered shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] border-2 border-black">
+            <input type="radio" name="mini-unmini" role="tab" class="tab" aria-label="MINIFY" checked />
+            <div role="tabpanel" class="tab-content bg-base-100 border-base-300 p-0">
+                <div class="card bg-base-100">
+                    <div class="card-body">
+                        <h2 class="card-title flex justify-center items-center font-bold">MINIFY</h2>
+                        <div class="label -mb-3">
+                            <span class="label-text">FILE</span>
+                            <span class="label-text-alt">*HTML, *CSS, *JS, *PHP, *JSON</span>
+                        </div>
+                        <form id="upload-form">
+                            <div class="join">
+                                <input id="fileInput" accept=".json,.css,.js,.html,.php"
+                                    class="file-input-bordered join-item file-input rounded-none bg-base-300 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"
+                                    type="file" />
+                                <button type="submit" id="submitButton"
+                                    class="btn join-item rounded-none bg-base-300 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"
+                                    disabled>
+                                    <i class="bi bi-check2-circle"></i>
+                                </button>
+                            </div>
+                        </form>
+                        <div class="mt-3">
+                            <pre id="output"
+                                class="bg-base-300 p-3 rounded-none border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hidden"></pre>
+                        </div>
+                        <button
+                            class="btn rounded-none bg-base-300 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] mt-4 hidden"
+                            id="downloadButton">DOWNLOAD</button>
+                    </div>
+                </div>
+            </div>
+            <input type="radio" name="mini-unmini" role="tab" class="tab" aria-label="UNMINIFY" />
+            <div role="tabpanel" class="tab-content bg-base-100 border-base-300 p-0">
+                <div class="card bg-base-100">
+                    <div class="card-body">
+                        <h2 class="card-title flex justify-center items-center font-bold">UNMINIFY</h2>
+                        <div class="label -mb-3">
+                            <span class="label-text">FILE</span>
+                            <span class="label-text-alt">*HTML, *CSS, *JS, *PHP, *JSON</span>
+                        </div>
+                        <form id="upload-unminify-form">
+                            <div class="join">
+                                <input id="fileInput-unminify" accept=".json,.css,.js,.html,.php"
+                                    class="file-input-bordered join-item file-input rounded-none bg-base-300 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"
+                                    type="file" />
+                                <button type="submit" id="submitButton-unminify"
+                                    class="btn join-item rounded-none bg-base-300 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"
+                                    disabled>
+                                    <i class="bi bi-check2-circle"></i>
+                                </button>
+                            </div>
+                        </form>
+                        <div class="mt-3">
+                            <pre id="output-unminify"
+                                class="bg-base-300 p-3 rounded-none border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hidden"></pre>
+                        </div>
+                        <button
+                            class="btn rounded-none bg-base-300 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] mt-4 hidden"
+                            id="downloadButton-unminify">DOWNLOAD</button>
+                    </div>
+                </div>
+            </div>
+            <input type="radio" name="mini-unmini" role="tab" class="tab bg-base-200" aria-label="DEV">
+            <div role="tabpanel" class="tab-content bg-base-100 border-base-300 p-6">
+                <div class="card bg-base-100">
+                    <div class="card-body">
+                        <a href="https://www.instagram.com/m9nokuro"
+                            class="btn w-full btn-white border-2 rounded border-black  shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                            <i class="bi bi-instagram text-xl"></i> @m9nokuro</a>
+                        <a href="https://web.facebook.com/profile.php?id=100082958149027&_rdc=1&_rdr"
+                            class="btn w-full btn-white border-2 rounded border-black mt-4 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"><i
+                                class="bi bi-facebook text-xl"></i> @Reiivan</a>
+                        <a href="https://github.com/RevanSP"
+                            class="btn w-full btn-white border-2 rounded border-black mt-4 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"><i
+                                class="bi bi-github text-xl"></i> @RevanSP</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/compress-json@3/bundle.min.js"></script>
+    <script src="public/minify.js"></script>
+    <script src="public/unminify.js"></script>
+</body>
+
+</html>
